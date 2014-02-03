@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html ng-app="t9">
+<head>
+	<link rel="stylesheet" type="text/css" href="t9.css">
+</head>
+<body>
+
+<div id="container" ng-controller="phoneController">
+
+	<div id="phone-pad">
+		<ul>
+			<li ng-repeat="char in keypadCharacters">
+				<span ng-click="onKeyPadPress(char)" class="number">{{char}}</span>
+			</li>
+		</ul>
+	</div>
+
+	<p id="number-sequence">
+		<span ng-bind="numberSequence"></span>
+	</p>
+
+	<div id="possible-words">
+		<ul>
+			<li ng-repeat="word in possibleWords">
+				<span>{{word}}</span>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<script type="text/javascript" src="app.js">
+</script>
+</body>
+</html>
