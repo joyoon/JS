@@ -1,1 +1,1 @@
-An implementation of T9 that generates all possible words for a given number sequence.
+Random Javascript code.
