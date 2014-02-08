@@ -80,13 +80,15 @@ var getPossibleWords = (function () {
 				//first, get last digit of number sequence, then concatenate each word in list with each character corresponding to last digit.
 				var lastDigit = numberSequence - Math.floor(numberSequence / 10) * 10;
 
-				wordList = wordList.map(function(word) {
-					return numberLookup[lastDigit].map(function(character) {
-						return word + character;
-					});
-				}).reduce(function(a, b) {
-					return a.concat(b);
-				});
+				wordList = wordList
+						.map(function(word) {
+							return numberLookup[lastDigit].map(function(character) {
+								return word + character;
+							});
+						})
+						.reduce(function(a, b) {
+							return a.concat(b);
+						});
 
 				//cache the wordlist
 				memo[numberSequence] = wordList;
